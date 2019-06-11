@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="CircularProgressBar.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CircularProgressBar"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    x:Name="ParentPage"
+    >
+
+    <StackPanel
+        Orientation="Vertical"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        >
+        <local:CircularProgressBar
+            x:Name="Progress1"
+            Width="100" 
+            Height="100"
+            Progress="{Binding ElementName=ParentPage, Path=DataContext.Progress}"
+            Margin="0,0,0,10"
+            />
+        <local:CircularProgressBar
+            x:Name="Progress2"
+            Width="100" 
+            Height="100"
+            Progress="{Binding ElementName=ParentPage, Path=DataContext.Progress}"
+            RingThicknessRatio="0.25"
+            RingBaseColor="Bisque"
+            ProgressColor="CadetBlue"
+            InsideRingColor="DarkGoldenrod"
+            TextColor="White"
+            Margin="0,0,0,10"
+            />
+        <local:CircularProgressBar
+            x:Name="Progress3"
+            Width="100" 
+            Height="100"
+            Progress="{Binding ElementName=ParentPage, Path=DataContext.Progress}"
+            RingThicknessRatio="1"
+            RingBaseColor="Bisque"
+            ProgressColor="CadetBlue"
+            InsideRingColor="Black"
+            TextColor="White"
+            Margin="0,0,0,10"
+            />
+
+        <Button Content="Next" Tapped="OnNext"/>
+    </StackPanel>
+</Page>
